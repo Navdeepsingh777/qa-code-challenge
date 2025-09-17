@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<testsuite name="Cucumber" time="15.534" tests="2" skipped="0" failures="1" errors="0" timestamp="2025-09-17T03:20:10.100Z">
+  <testcase classname="Pokémon Detail Page" name="Open first Pokémon detail page" time="12.867">
+    <failure type="TimeoutError" message="page.waitForSelector: Timeout 10000ms exceeded.&#xA;Call log:&#xA;[2m  - waiting for locator('h1') to be visible[22m&#xA;"><![CDATA[    at DetailPage.waitForDetailLoaded (C:\Users\navde\Documents\navdeep-singh\qa-code-challenge\tests\e2e\pages\DetailPage.ts:12:21)
+    at CustomWorld.<anonymous> (C:\Users\navde\Documents\navdeep-singh\qa-code-challenge\tests\e2e\steps\detail.steps.ts:18:20)]]></failure>
+    <system-out><![CDATA[Given I open the Pokédex home page..........................................passed
+When I click on the first Pokémon...........................................passed
+Then I should see the detail page with a name and sprite....................failed]]></system-out>
+  </testcase>
+  <testcase classname="Pokemon Pagination" name="Navigate to the next page" time="2.655">
+    <system-out><![CDATA[Given I open the Pokédex home page..........................................passed
+When I click on the "Next" button...........................................passed
+Then I should see a different list of Pokémon...............................passed]]></system-out>
+  </testcase>
+</testsuite>

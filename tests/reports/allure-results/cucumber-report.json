@@ -1,0 +1,157 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "pokémon-detail-page;open-first-pokémon-detail-page",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Open first Pokémon detail page",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 720691200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I open the Pokédex home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\common.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 852563600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I click on the first Pokémon",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\detail.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 648666999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I should see the detail page with a name and sprite",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\detail.steps.ts:16"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 10014274000,
+              "error_message": "page.waitForSelector: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('h1') to be visible\u001b[22m\n\n    at DetailPage.waitForDetailLoaded (C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\pages\\DetailPage.ts:12:21)\n    at CustomWorld.<anonymous> (C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\detail.steps.ts:18:20)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 683753899
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "pokémon-detail-page",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Pokémon Detail Page",
+    "tags": [],
+    "uri": "tests\\e2e\\features\\detail.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "pokemon-pagination;navigate-to-the-next-page",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Navigate to the next page",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 681628100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I open the Pokédex home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\common.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 787856099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I click on the \"Next\" button",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\pagination.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 548023400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "I should see a different list of Pokémon",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\pagination.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16372900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 537871300
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "pokemon-pagination",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Pokemon Pagination",
+    "tags": [],
+    "uri": "tests\\e2e\\features\\pagination.feature"
+  }
+]
