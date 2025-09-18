@@ -27,13 +27,12 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright E2E Tests with Cucumber
+      - name: Run Playwright E2E Tests with Cucumber (TypeScript + ESM)
         run: |
-          npx cucumber-js "tests/e2e/features/**/*.feature" \
-            --import "tests/e2e/steps/**/*.ts" \
-            --import "tests/e2e/support/**/*.ts" \
-            --require-module ts-node/register \
-            --format html:tests/reports/cucumber-html/report.html
+          npm run test:e2e
+          npx cucumber-html-reporter --theme bootstrap \
+            --jsonFile tests/reports/cucumber-report.json \
+            --output tests/reports/cucumber-html/report.html
 
       - name: Upload Cucumber HTML Report (always run)
         if: always()
