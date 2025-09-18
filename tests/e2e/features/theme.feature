@@ -1,7 +1,7 @@
 Feature: Theme Preferences
 
   # Known bug on main branch: dropdown works but dark mode class not applied
-  @bug-main
+  @bug-main @chrome
   Scenario: Switch to Dark Mode
     Given I open the Pokédex home page
     When I navigate to Settings

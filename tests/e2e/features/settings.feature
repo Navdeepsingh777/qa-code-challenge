@@ -1,7 +1,7 @@
 Feature: Settings Page
 
   # Known bug on main branch: theme dropdown updates but UI dark mode is not applied
-  @bug-main
+  @bug-main @firefox
   Scenario: Change theme to Dark
     Given I open the Pokédex home page
     When I navigate to Settings
@@ -9,7 +9,8 @@ Feature: Settings Page
     Then the theme should be set to "Dark"
 
   # Known bug on main branch: page size setting not applied correctly
-  @bug-main
+  @bug-main 
+  @firefox
   Scenario: Change page size to 5
     Given I open the Pokédex home page
     When I navigate to Settings
@@ -19,7 +20,7 @@ Feature: Settings Page
     Then I should see exactly 5 Pokémon cards on the home page
 
   # Known bug on main branch: unchecked fields not reflected correctly
-  @bug-main
+  @bug-main @firefox
   Scenario: Uncheck first three detail fields
     Given I open the Pokédex home page
     When I navigate to Settings

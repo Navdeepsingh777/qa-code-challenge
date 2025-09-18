@@ -1,7 +1,7 @@
 Feature: Pokémon Detail Page
 
   # Known bug on main branch: detail page sometimes fails to render h1/img
-  @bug-main
+  @bug-main @firefox
   Scenario: Open first Pokémon detail page
     Given I open the Pokédex home page
     When I click on the first Pokémon

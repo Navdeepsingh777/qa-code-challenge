@@ -1,5 +1,5 @@
 import { setWorldConstructor, World } from "@cucumber/cucumber";
-import { chromium } from "@playwright/test";
+import { chromium, firefox, webkit } from "@playwright/test";
 import type { Browser, BrowserContext, Page, Video } from "@playwright/test";
 
 export class CustomWorld extends World {
@@ -7,24 +7,45 @@ export class CustomWorld extends World {
   context!: BrowserContext;
   page!: Page;
   video?: Video;
+  parameters: any;
 
   constructor(options: any) {
     super(options);
+    this.parameters = options.parameters || {}; // 👈 gets --world-parameters
   }
 
   async init() {
-    this.browser = await chromium.launch({
-      headless: false,
-      slowMo: 300, // 👀 slows actions so you can see
-    });
+    const browserName = this.parameters.browser || "chromium";
+
+    if (browserName === "firefox") {
+      this.browser = await firefox.launch({
+        headless: false,
+        slowMo: 300,
+      });
+    } else if (browserName === "webkit") {
+      this.browser = await webkit.launch({
+        headless: false,
+        slowMo: 300,
+      });
+    } else if (browserName === "chrome") {
+      this.browser = await chromium.launch({
+        channel: "chrome", // 👈 real Chrome, not just Chromium
+        headless: false,
+        slowMo: 300,
+      });
+    } else {
+      this.browser = await chromium.launch({
+        headless: false,
+        slowMo: 300,
+      });
+    }
 
     this.context = await this.browser.newContext({
-      recordVideo: { dir: "tests/reports/videos" }, // 🎥 save videos
+      recordVideo: { dir: "tests/reports/videos" },
     });
 
     this.page = await this.context.newPage();
 
-    // 👇 this is valid — page.video() returns a Video | null
     const video = this.page.video();
     if (video) {
       this.video = video;
@@ -36,7 +57,6 @@ export class CustomWorld extends World {
       await this.page.close();
 
       if (this.video) {
-        // wait until video is finalized
         const videoPath = await this.video.path();
         console.log("🎥 Video saved to:", videoPath);
       }

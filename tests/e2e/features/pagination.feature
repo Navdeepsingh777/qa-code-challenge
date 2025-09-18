@@ -1,5 +1,5 @@
 Feature: Pokémon Pagination
-
+    @firefox
   Scenario: Navigate to the next and previous pages
     Given I open the Pokédex home page
     And I note the name of the first Pokémon
