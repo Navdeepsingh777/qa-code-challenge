@@ -28,11 +28,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright E2E Tests with Cucumber (TypeScript + ESM)
-        run: |
-          npm run test:e2e
-          npx cucumber-html-reporter --theme bootstrap \
-            --jsonFile tests/reports/cucumber-report.json \
-            --output tests/reports/cucumber-html/report.html
+        run: npm run test:e2e:html
 
       - name: Upload Cucumber HTML Report (always run)
         if: always()
