@@ -2,11 +2,14 @@ name: Playwright E2E Tests
 
 on:
   push:
-    branches: [ navdeep-singh ]   # run only for your branch
+    branches:
+      - navdeep-singh
   pull_request:
+    branches:
+      - navdeep-singh
 
 jobs:
-  test:
+  e2e-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,16 +22,17 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+      - name: Run Playwright E2E Tests with Cucumber
+        run: |
+          npx cucumber-js "tests/e2e/features/**/*.feature" \
+            --import "tests/e2e/steps/**/*.ts" \
+            --import "tests/e2e/support/**/*.ts" \
+            --format html:tests/reports/cucumber-html/report.html
 
-      - name: Run Playwright tests with HTML report
-        run: npx playwright test --reporter=html
-
-      - name: Upload Playwright HTML Report
+      - name: Upload Cucumber HTML Report
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
-          path: playwright-report
+          name: cucumber-html-report
+          path: tests/reports/cucumber-html/
