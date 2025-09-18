@@ -16,7 +16,7 @@
     "allure:open": "allure open tests/reports/allure-report",
     "report": "allure generate tests/reports/allure-results --clean -o tests/reports/allure-report && allure open tests/reports/allure-report",
     "test:unit": "vitest run",
-  "test:unit:watch": "vitest"
+    "test:unit:watch": "vitest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
