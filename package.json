@@ -16,14 +16,40 @@
     "test:e2e:chrome": "cucumber-js tests/e2e/features/**/*.feature --tags '@chrome' --world-parameters '{\"browser\":\"chromium\"}' --import ts-node/esm --import tests/e2e/steps/**/*.ts --import tests/e2e/support/**/*.ts --format json:tests/reports/cucumber-chrome.json",
     "test:e2e:firefox": "cucumber-js tests/e2e/features/**/*.feature --tags '@firefox' --world-parameters '{\"browser\":\"firefox\"}' --import ts-node/esm --import tests/e2e/steps/**/*.ts --import tests/e2e/support/**/*.ts --format json:tests/reports/cucumber-firefox.json",
     "test:e2e:all": "cucumber-js tests/e2e/features/**/*.feature --import ts-node/esm --import tests/e2e/steps/**/*.ts --import tests/e2e/support/**/*.ts --format json:tests/reports/cucumber-report.json",
-  "test:e2e:with-server": "start-server-and-test dev http://localhost:5173 test:e2e:all",
+    "test:e2e:with-server": "start-server-and-test dev http://localhost:5173 test:e2e:all",
+    "report:main": "node tests/reports/generate-html-report.cjs main.json main.html",
+    "report:fix1": "node tests/reports/generate-html-report.cjs fix1.json fix1.html",
+    "report:fix2": "node tests/reports/generate-html-report.cjs fix2.json fix2.html",
+    "test:e2e:main:run": "cucumber-js tests/e2e/features/**/*.feature --import ts-node/esm --import tests/e2e/steps/**/*.ts --import tests/e2e/support/**/*.ts --format json:tests/reports/main.json",
+"test:e2e:main:report": "node tests/reports/generate-html-report.cjs main.json main.html && explorer tests/reports/main.html",
+"test:e2e:main:after": "npm-run-all test:e2e:main:run test:e2e:main:report",
+"test:e2e:main": "start-server-and-test \"npm --prefix ../qa-main run dev\" http://localhost:5173 test:e2e:main:after",
+
+"test:e2e:fix1:run": "cucumber-js tests/e2e/features/**/*.feature --import ts-node/esm --import tests/e2e/steps/**/*.ts --import tests/e2e/support/**/*.ts --format json:tests/reports/fix1.json",
+"test:e2e:fix1:report": "node tests/reports/generate-html-report.cjs fix1.json fix1.html && explorer tests/reports/fix1.html",
+"test:e2e:fix1:after": "npm-run-all test:e2e:fix1:run test:e2e:fix1:report",
+"test:e2e:fix1": "start-server-and-test \"npm --prefix ../qa-fix1 run dev\" http://localhost:5173 test:e2e:fix1:after",
+
+"test:e2e:fix2:run": "cucumber-js tests/e2e/features/**/*.feature --import ts-node/esm --import tests/e2e/steps/**/*.ts --import tests/e2e/support/**/*.ts --format json:tests/reports/fix2.json",
+"test:e2e:fix2:report": "node tests/reports/generate-html-report.cjs fix2.json fix2.html && explorer tests/reports/fix2.html",
+"test:e2e:fix2:after": "npm-run-all test:e2e:fix2:run test:e2e:fix2:report",
+"test:e2e:fix2": "start-server-and-test \"npm --prefix ../qa-fix2 run dev\" http://localhost:5173 test:e2e:fix2:after",
+
+"show:main": "node tests/reports/generate-html-report.cjs main.json main.html && explorer tests/reports/main.html",
+"show:fix1": "node tests/reports/generate-html-report.cjs fix1.json fix1.html && explorer tests/reports/fix1.html",
+"show:fix2": "node tests/reports/generate-html-report.cjs fix2.json fix2.html && explorer tests/reports/fix2.html",
+
+    "test:e2e:branches": "npm run test:e2e:main && npm run test:e2e:fix1 && npm run test:e2e:fix2",
+    "test:e2e:full": "start-server-and-test dev http://localhost:5173 test:e2e:report && start tests/reports/cucumber-report.html",
     "report:merge": "node tests/reports/merge-reports.cjs",
     "test:e2e:report": "npm run test:e2e && npm run report:html",
-    "allure:generate": "allure generate tests/reports/allure-results -o tests/reports/allure-report --clean",
-    "allure:open": "allure open tests/reports/allure-report",
-    "report": "allure generate tests/reports/allure-results --clean -o tests/reports/allure-report && allure open tests/reports/allure-report",
     "test:unit": "vitest run",
-    "test:unit:watch": "vitest"
+    "test:unit:watch": "vitest",
+"test:e2e:fix1:visual:run": "cucumber-js tests/e2e/features/**/*.feature --tags '@visual' --import ts-node/esm --import tests/e2e/steps/**/*.ts --import tests/e2e/support/**/*.ts --format json:tests/reports/fix1-visual.json",
+"test:e2e:fix1:visual:report": "node tests/reports/generate-html-report.cjs fix1-visual.json fix1-visual.html && explorer .\\tests\\reports\\fix1-visual.html",
+"test:e2e:fix1:visual:after": "npm-run-all test:e2e:fix1:visual:run test:e2e:fix1:visual:report",
+"test:e2e:fix1:visual": "start-server-and-test \"npm --prefix ../qa-fix1 run dev\" http://localhost:5173 test:e2e:fix1:visual:after"
+
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
@@ -53,6 +79,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.8",
     "jsdom": "^27.0.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.3.3",
     "start-server-and-test": "^2.1.1",
     "ts-node": "^10.9.2",
