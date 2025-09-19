@@ -1,20 +1,16 @@
 import { describe, it, expect } from "vitest";
+import settingsReducer, { setPageSize } from "../../src/features/settings/state/settingsSlice";
 
-// Fake slice reducer for testing
-type ThemeState = "light" | "dark";
+describe("settingsSlice", () => {
+  it("should update page size", () => {
+    const initialState = { 
+      pageSize: 10, 
+      density: "comfortable", 
+      showFields: {}, 
+      theme: "light" 
+    };
 
-function toggleTheme(state: ThemeState): ThemeState {
-  return state === "light" ? "dark" : "light";
-}
-
-describe("Theme Slice", () => {
-  it("toggles from light → dark", () => {
-    const newState = toggleTheme("light");
-    expect(newState).toBe("dark");
-  });
-
-  it("toggles from dark → light", () => {
-    const newState = toggleTheme("dark");
-    expect(newState).toBe("light");
+    const newState = settingsReducer(initialState, setPageSize(20));
+    expect(newState.pageSize).toBe(20);
   });
 });
