@@ -1,0 +1,703 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "pokémon-detail-page;open-first-pokémon-detail-page",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Open first Pokémon detail page",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 522135900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I open the Pokédex home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\common.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 548354499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I click on the first Pokémon",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\detail.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 427171399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I should see the detail page with a name and sprite",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\detail.steps.ts:18"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5000918100,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\node_modules\\@cucumber\\cucumber\\lib\\time.js:64:20)\n    at listOnTimeout (node:internal/timers:588:17)\n    at process.processTimers (node:internal/timers:523:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I should see key detail sections like \"Base Stats\" and \"Description\"",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\detail.steps.ts:32"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1177659799
+            },
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzdfYxd5Z0n+ENC522mp9MmUeNZr5CdxCpsBHIvSAhpZTGx3RPLpZ1hy/I/TTumJVsxGEcJLTaTKSFUnUFWCGogdmRLARzyj+UadqWyTLftDPL+YSGB1gJhU1sktqyxxoyaOJnpbgLpnnjOc+7bOfet7q0qv/4+H5XAdevec59z73m53/P8nufefOnSpQwAAABudDdnAAAAEIAADAAAQAgCMAAAACEIwAAAAIQgAAMAABCCAAwAAEAIAjAAAAAhCMAAAACEIAADAAAQggAMAABACAIwAAAAIQjAAAAAgXz4m48//M1Hl353Kbspux599jOf/uf/7LPZnNx06dKlDAAAgAB+9eu/+8QnPpEHyE9+8hPZdSgPsB9++NGHH338h3/w+zff/MlsSAIwAABACL/+b3//qU/d/LnPfia7zn3823/873/3D1+85fPZkK7L0A8AAMBQPvr4t3kH6g2QfnOf/tTvfe4zn/77f/hNNiQBGAAA4Mb30Ue//dzn5jh09hr0uc995jcffZwNySRYAAAAN75//Kd/+r3hB81es266aS5TeAnAAAAAIcwtNN5IBGAAAABCMAYYAADgijjy2KLFjx3NuGr0AAMAACyU87vvXzM+3Xn7hgMXnl6bcZVd0R7goztGFi0eWXT/i+f63CldFMnv9sDus13/fHxr+uvIvXvOZ1xW7x9+4ttP/uhkBgAADGzJw69NX7yQfg6MZdnY3tq/L15/6Tclr61H2m9NmW7H8Z4Puua7uOfSA5yv86bJ6k0jj598bctt2fwd37r50LV2deT9w8/+5Vtf+fffWX9r+daTP3nkr7/QfuNV9eYLT750qvnb0q//4M/uzgAAAK6yFCGzvRefX51dbQvUAzy9a9VCBP2jO7ZNZismTqgNGNb5qaeefClb/8MfPFH7+frK2R+TB/tHnjr8fvP3PNJ/+ydvNn+9df2TP3jiG6syAABgIZ198d6irHVRWxdr6fZWL2u68YHdR5p/KmJXvWx2pL27tecSuvTlzs3a56evTI49/e7Mfz7/X9pu/N3vfnfsP/2/2TzMIwDnvb5Fb/7J8RXF74cOzvc1Pb/8W/kCX3l4acZw3n/7zQ+Wfv2he5o33P2Q7l8AyACuPYc2PZQdaCSpyc2NBJvH1PumHjxRq5c+NvHOtlKl8enxp2oPOTYxcmhTHm6fWnmy+Ws56PZcwoIpl0DXh7jm6XpHpfJ5Zs8Di0oDV8/teSBVEE8O157p///n/278P5QzcJ5+vzP+vXen38vmYQEmwbrta6PLJ07PZNnbPz+frVtSFItva5VIj/Xq6W7erV7wfHTHmmZl9fLxY69vX1L/Jb2Ru2ZqC9u/t/dycnnvccrPzSLtsf3T+9aVljB2+brd3/jRtw83CpA//yd/sXO0Xhud983++M271t/91uG/+SD9vvJP827V1p2LX7st5Av3DFlfffaNk9ndXTts3z/8xPff+GXt3yvX/zDl5NSqoj1v/OW338if69/80Rv/T/HEL30770kuyqfTo967u7Yi9X/fd/779ebd8tU/f3L9ki7NXrn+69nh1BddS+N5r/JPG4O5VzZuBACAuFZMvFAfPXrb9p1jE9sOHnl67brs6DO7svFjjb7AJQ9/Z8P45qmjz69eW3lI7fYz1V/rd+u5hKVbXr+wJb/pb3+ZLaQjj22arEW5NO/XZLah8YdDL2fHLl5YkrqpNz+6+2uvPLz9lQPvDl0C/cC/WZ//N8/A/2Hi3/2vS/5lLf0u+V/+5Y7tf57NwwIE4HOvTtXS6Z1frq3kocqf86D/TpcRwkW1c9ZIv+1Tpc1MrLk3KzJwKf2mhW3eVllK9a/p0sh9D2R5Bn4+v+CRFjj51IvfXbdl5pniPnmX9WVKv0XCzL765z+sZcI89X3/yfOlZPvLn53I/uKJH95aDCf+6ZOP/DRPyE98o/7rT95cVeutTTEy+9Mnflg86s0XnvzLp7JBM/Ct67/x1ffyJT9xoZxLm23Ls+sTRSBPufeRF7I8iI5+54l7KmOb169JYTXrPXL413/z/Xe//oMnvlFbwZ/+x6k/roX81Oz3G+ue1uhnedZtPPVPf/Un9ad+40cvZAAAEN6y5V0qXs/PvJPNTK5ZNFG+ccNlW8ICODp1KO9fLPJ5LWy3nnSi1pf5lZXLszPZPDQz8F8++X/t2fvi/NNvNq8S6DTuN/Vrr5o4nX4defy7687vfupQ7d+16uiL+zfU7vm9turodLUg/X9sfzHc98hfFek3779tPWrm4NFzxWWMIt9W/tR0tJlsm9OsZadffvV8eg9eeHx57an3vDg+mZUvtMzFB3lP6ZOPlH9+2pql+s3Db/xy5fpW8lz1Z19fmZ06+UbzDrd89f+sdQjfuv6+le2/pp7bLKXFE6dWrm9m5rvX33PLB++98f6gDbx1/c4f/sU92c9+nLfticPny23LGk+Xvyyj/3ppdurdN7O5WPmnjWy86l/9yRd+/eb/d77e7C/c843GuufNaA0/vvDBL7M/XFx/6nu+ofsXAAB6G9s/3Zgyeo4TR89/CQNLeXv57V/KLrM8A//b/2P9g1se/sItt8w//WYL9T3AjYrl428VvbjLN66tR811o2PZoclWdXTN1KbNp2uPSvXJeR/yz2sXBvL+25Hx5kKnT80UL2sytrPeld9YYKHx1xTFdzUfN/PuL/Kkly3dcmB8Kg/nkxO7iud6bl5DizsLktMs0PVmXPiv2cp/XUl3d69a+tJf/22eXrv23966eEnnjeff/3V26vAjeSdwy+ezoaRpq9YXXb4/fuStWoNT23556seP/Kx8v7m9EJ9fsrjLrXmzb7nrzu7d1HlO/usfv/TtJ6e+2tEvDQAAtCxZfkc2PnV837o5l6zOfwlDP109eV1meQZe86/+93/xL34/WwjzCMCdX3109szbgzwwD8kj6b+pj3d7WsLMu6e73e/MzNlfvDXdZ0E9/vrOmXPZ6oX4TqYr7ZYFCYopBn/xR98+/H+frPcnV4cZX0lLRr/zxGiqkU4J/BYxGAAAelg7uiHbvG3r6HStjzA7++LWV9fu2z7E5+eeSyjGjd65f/p7/1u2gIqnqw0/rhUCX8Zy64VKv9mCfQ1SzdK1D46k/9eql5MjU7Xe2jQ8uGlk9ECjPnlVMQ/Y8ttr80g36pzrP688vPRLdxULzCanalOKndvzbOkbiBt/bVZc135qsfzsi5uK2uyxsaKgeuLR3Wezy2PJ4j+qFDzn3jx5NvujLw71FcFLbv38L996e+CS5/4WL/lC9v6F813btuCqzU59zlX3fOMHT/z7ry7g2gEAwA1n3dMX92+Y3Nz4EqP7Tm3cPmTv0fyX0KG1tPzn/hfPVZ/uwFgxJfXiR7ONs6TflJYnt+VL+Di7yhY0ABejn9P/G8OD6xNipeHB1Tum+uQi9E5u23qkmP0s/ZJKoBdVvhGrscCs9so2xhv3errWF2Gd3/1Qfdrnfc9/c2KkWPhD1Tds4aTxuqcOt0benvzJS6c+/yfrhxvyeusff+WWD974UWv47hs/emHg4Pr+4dID8wb8p7/54PN3/3Ha3O9etTQ7dfhHJ7vc89bFf5h98EHrYYu/cEv2qwtDhtRirHKr2e8f/o+1ya6LZvyk9bwAABBMl6/MzTNqZVzu6n0XGh229b92DN9NcziXvim2bQldfu26hNKzDCq17WJHR2N5pdK/az2XX85D38rlbe0pt7zWsNe2fDq7yhZmDHBLvmInVpZnZq58oVHJbdufmzhYTNS8+YG7Tryy78Kxu6oTQbcWuD9rzCyddxHvfOu+0ncsdTxdoTmn9IqJb6X3ppiU7FDR4bzssnwN0q3rn/yLLI28rQ+1Xfr1H+wc+mt42xeSvktp8Ee//7PyQN9SA1b92Q+znzySpp5u/qk5WVd9jO5LtRHOt64fXfnkS99/8m9qX4M02PO2NfuWr/7511f++KXGH081n3fob3UCAACuXef2PLDq3Z1FvCpKoO8YvS5God506dKlDBbOmy882foeYAAA4Nrwt7/89RdvGXKe3X6Ob13c6Jsc6fLFt1fAHNZooXuAie6NN05lK/9U+gUAgBtbUb+dXWcWdgww8bx/+InWWOXzU08dPvWFe/7t1Zl0GgAA6Ef9rx5g5ufWL95a/vpiY30BAOCa9Hs33/yP//Q/PvV7N0gGnFuYNwYYAADgxvfRx7/96KOPP/8HC/adulfXP/zDb/Io+8//2WeHepQSaAAAgBvfZz79qbwH9MPffJRd/z7+7T9++NHHw6bfTA8wAABAHL/69d994hOfyKPjJz95XfaG5gH2ww8/ytPvH/7B79988yezIQnAAAAAgXz4m4/zfuBLv7uU3ZRdjz77mU/Poe+3RgAGAAAgBLNAAwAAEIIADAAAQAgCMAAAACEIwAAAAIQgAAMAABCCAAwAAEAIAjAAAAAhCMAAAACEIAADAAAQggAMAABACDf/7ne/ywAAAOBGd/Ov/tvfZwAAAHCju+nSpUsZAAAA3OiMAQYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACOETGQBdnX3x3sUjW4/Mer/zu+8fWbTjeDZXR3fM6+EhpPfigd1ns+uXdxmuooXZAY88tmjxY0czboRjMpEJwLQ7t+eBRYtHSj9X/ACXTjAj9+45X8sVKX7kx9n7XzyXXXV925NOBum8mL+AReOTdMYtv5htZ98iXzXv3NTxFrSdbo9v7bbM9Khmq4olL+poZOU+De2N7PtSt9+50ba+ba42uNsq1970Xnfot/BuL3tlscXq5M0eIMdeK6ov8pX9sNX/9SwpGlltW+lNrL7axQWCflvXld7T88YXa5dvmZ0vb5fGtG+BC5tja3tr6eda3VaHPgBeIX138+7vdfU1v9INbri6Z9uugdBlmqulsaHW/93jhNjYBwdYSMsAH06u1i4AV4sATDcjj5+8MH2x/vPKw0uzK+j41s2Hlo8fe337kiEeNOhF2XTyuNIH+rG9jVdy79jktvJni6PP7MpGVswcPNrlE3/pLTgwdmhTc+3SmWxbtn+6tcw+Tz29a1P/lS0+BW7Kmi3Mf45NZKdmsgHXKP95eu2sba49qNnmE49nE2vazuiLNmcHWsvce+fEmvak1Hfhl8vSLa9fmN63btb7LXn4temLz6/OFkB6NcrvyIHGG9z14kU36XLDZU9QZ18cn6zeku+Dm89MnCiavX/D5ObmR/l8jdaM37G3sXXtWnUZP15fzh28tQWmHXmhn2VF/aWrv3rXSAa+ItvSlZdvq/dNPXiidUS6M5ur+fcHXs2z7XVp4CPh4K7GB4NZNc+zxRlzwN1w7bfywMlXQgAAEABJREFUO//VoBvknJ4CbgwCMNegFQ9+bZj0e91YvW//hmxyqnFyOn5wcsWDL+wcm971vb4nnrXP5yn3zEwRJ869OjUztrcUyVbv65m7VkyMb5iZeLR3l8LxrfftunN/W3LLs1wp085Vuc3tlm45ML5i5t1f1H47t+fR8ekNB8pBOl+pIin1Su/9Fn69O3v05fzVKL0ja59fgLdjoZ3f/dCuO8c2VG55Kr9u9Vz94/u6pw+MnR5/pgi6R/5qvLVGSx5+4fHlk89e51Vzq79b2oAXXnr1srd/rkPmcjk6VdpWs3RE2rf9hjzjcENYumVi8APC0rUPjhw6OGyUHeop4IYgADOoWmVUrWymWZ98757jteLGxrXDcrFrqZqrNlbkSK3qLF0vT8uZ/SJu6lhLYS/viHtty22tRVXKKdOiNh/KsrxXsFWTWS7vqbctPXDN+HQ2k/cutpVYN3SpIq7UbXa2J61v/cpx6i1MWeW27a/07L7+ysrlzeR2ZGpyZHTD0vRhenKqb5/Y2TNvl39tRejZfK3IIQ91f53P7Xl2cuTx787evTknbW2umnn3dOOfx783cXpsf2fGW/Lwd/L03uNKdnnh/V/2dU9fLN6ptc+XO3JLFbnVDq72jbx9jFNp867drd6ZWe5AqP+7tQWWt/MuG1Wnzo8vaZmrJk7nXfqrSg/sspGn/qhtedds3oXYuDFvc6WuslLiWK48r93Y+Xp2DIRO1yzu2LtvtNTAlNsr162W374ie+fMuSJsZGOjrfd36bI7s9Nvvde2gt329EqB6AO7qw8ZbAfPqkekVk9dvj0Ua5dfaqlve6UjUvfGlJU24B6NqatsMNmgzs+8U/qtvM1UF1J63seOtroi+x7Wei+wfS26bEt9X5kee2Jpsa3tcGHPJp27ebHl1N/uzvc616XupqMvt/m61Vpb2hpLZ5mOU0+5qrmyEbZe6tJZo4fuB6LyKmfVnbf9/S3fefan69+MzhXPOta0tA+Wnqt16KgfFYdYVF3bsbr7kbD3PjLADtj9uFGtTu/32NmaUT+JtFpyb88Lu9M9PjmUDwiNfbCnJRs2rph8qnpymf3DSe9jTvU81eeYDNcXAZhhTG47OJoKZprH0JmJZ7MX0i3piFxU5749fqxRyLds/L7yyez0+FO1Mtf59Gg1Oi1r5ZR3pJvy08bFvGc129Ba+NkXD95+rFRPWHx4SueAYxMj2fKihbOVWHd5ogXw3qmZbNny1PNQ9JhtXJt/aLvta6N9+8RSb9vM2M5af8Vt25+bGMk/bw06VCx1lnYvhD5/6ODpWgMug0qb2x15bNPkiolvFV2CKcquuOsr3e5Wvlgw+MJnl38QaVbkptKvtzdXP5F0bOSlB7Y275O3P7tpsudz5J+lagtJ5bKl1//oM6cmWqXm3YqBi+7xybYmFR96To6vqFdL1rJH1408TwJFVXyt4HyW4u18h20WLfevpS878tiqiWUH2uoOWht23W1fXpZN5zemz1XLb/9S6a5fumtkoK6G/JNWeqL6y7Xzrc27ZkotH3AHP7dn6q4Tpcr5BamcTBtwqZe+a2OSITaY6oqnmoiJ5tWHVrHusYl3WmMo8nCy6Z1G9eyJleMpiQ2gxwLzV7u1tP1F3/5Q21IPqZHNev50RigduK7e2aR2VFzVVrq8bnSscu2peoSc3LYpe67+ouVH4OJF63Lqya/ovbuzo6x09b4TrcKHozu2TY7tnX2MT/vrU1nllENaO+/0gTvaVmdBzrY9Vzyr7Z4HR0+WjqJpTfN9cH/zwmU6UGfjx5pbTn5UbCyqMoyl+6KKF7NyrE4vdfcjYY99ZLAdsNtxI99uSwefYpldDh3pQ0K+grM1o3g77pva2FiLvmVZXaQDQvb4gYGLFG7bvnNseurQPJ6i13mq3zEZrjcCMN3ULq92Xv/r7DAs5ZCjz+SxpHReLwr5yn2bY99pdRqkjw5de1fyftHqJ+mKSl5a8vDz3ftnKiVt6WNNZ4/TbAZ8otSrMP36gGemlDcOLR//ZhHRSz1mqWbp9MuvViNB6y14NH0obOWN2ieALP84ONiMKanuutcZ984vz9JR093ktu6Xxnu2uXjQ5sZDpkarQ916vN2pqzAbcOGDq/V7n2w+vFaPXe4O6tErXntg8yNCfin9QJ/I2CpTL8plG8sv1TOn6/S1PtI2+ZJrH50X9e+3mf9GXkmtvWvpywOh65n5ClRlt5UGFBGi1KQB1/227U83t7S1oxuKTN5dzyNSU3MLbO7FfRsz3AaTPiLXd5AiJDT6pZ/JP2E3i3VTWUS9ACSNwV4x8UKjwUXwyAbQa4GpT/uOZfWlrXt634IUhqRGlq4UrPvmRPlAt3Bnk05pJ+qX/dJxu8hg5a7IajFOMRhhotmA1ltZehe6Lrl1bMkP7I1rPanEtBgU0Hb1JBvibFta5dre0TqKFqNCKpUjpTsPc5Lq1H3F8wZk5c1vovnupHf50Hjq7O2IbaU3tNTgnotqP1b32Cx7bdJD7oAltZ2rdZQrBm60R8qUrssXMnruqrVVbx7K2vaCPhrn2bzHu//W3mH1xrF5PUWP81TfYzJcbwRguilPy1H+UNj8hNRQ6ttJXT1jo5XP0OkTZ+sjfo+OvrI0j052oM8Hl9rHiPsGqCds1fBsG6zfZa5PNKtmXCy6lOsdU69OzaT659o90jmmvSSv/hbkV6a71DAXH+/qMXj22rZ1PQuhyx1xKQAUF+BnP6WVJ8Eqf5Lr2+b6JFhpFPS2apFbj9G8bUXUfRc+uPyDflu/d+qBL+eijo281wP7qPZ5VjQvNKRCvl6KzFmPwX06Lee5kRcfVTcNUR5ZK4u4IvP0pHd/w8Y+MWzgdW/V7A3YR9pL6ag48e6aHkXFrcYMtcE0J8HKe7dKl6vSQbVWmdm+CvnFi9YBZHA9F7j2W3kX5bYFnoU4XWGphczaTyo0bbncZ5PZ1I54tRhcOyIVxTj10FLMtlAq3e9xWOimWexaWd8U+fJXePOh9hEfg55tS6vcZe/IM0/5eL4Ar0+PZjQb0Lpkk67atHbCFBfzA9eqcqwtdK8E6b2owfagnpv0kDtgSefOVVykLl1lOzN+f0q/pdNf7101mdPb0TrPHrvrqeE+igw6FVbvp+hynpr1mAzXFQGYa8m6py/uz/pP8Ft8ainqi3qPzEnH7lYx0sC1ncM/0UBKcbFxATtdSS1f+K8Nauo2FVbe37u31yxZKQbv7z1QtrIunYXQS5bfkV2eiXz6tTl/i/OP+K0RSt1HhBY6qmpnX/g1rjrndirk6y/F4J4ruxAbeTF5dW3O7QFicOpRKffkN0Y/pgd21Kuf+/mZbCS/sXMz+8Vb05XSgzkYeN1TFGlVVw7WRzqIFBcbPUILcrRpKvqpGvOHFVrTp3fOuz4n3RdYu+ZSVBovZAyuTHFcKXi+RuTH+dYRqTWB0PlDB7P6MI1hFFdbmrP0p8LakhT5biAbDlTf2VYabCvemc+iBrPg+8hAOup3Llsz+hcddDP0VFiV6pLhzlNwfRKAWSjpk27bZE5p/pshLpwXUg3hrBP8Fh/c9/c6JRw/OJmNDdxPVe4FbZvbZrYnmqtU5t12yk8flXpMhVUU5m3ucVGg50DZ9oXUCqEPZcuaNxV9PpdpPt5+bS5GKDXTeHHPpzo7OWuzCn9z7ZALn9Xy29s724ve+JWDlHJVH1idNWQAxROVKvoG0mvE7FAbefkSQ2ezU4XkyfEeX8dVUqs7aP00Rj+mSNNxIaPZ/dKcDatuiG6E6ge495q99AOve21He23LcIeg4fRrzNw2mFpnbG3Sqc6Daku1JjNdcSjpcVjru8CsNu732KAlmrPKj05DjkVsWKCzyWAa49WzWgxIz3v26MvZXDrY07Dh0qjXstrUccUo8Xl/hVva3driTdoOh72ulPbN9lNbsT2PznaM6tKAlqM70sjbVKDUp1SnOQio96I6j9Xd9Nuk53jE7txui9aWenGXTbxWDI5tlYHMtmddacWW/NRcSqX6nqd6HZPh+iMAs2Bqn9ta/UjluY46DDYLdIezL27t2k9VyYGVzJBmHGndr60/qqg9bvagpgbP9kTt5jLBZvu8uEVL+lzirU98VZ+r5rHKjL7P7Bq0ErJWCD1RqstKw1+z6tQyC6bc5g6VYcnpnlnbDC7F3Ce9p/3ou/Csc97j6mNT/F5VmqJz02AjrIpOv1YvejFTUTaU0ufs+vN2uVPbhpe+Q6g+Vrzy8H4beVtmTrWRzU9ClWYfeWygt75jFuhuqlclioGOtfGT1esdtXlx6tc1UndZrzexNhSwFRXS14N3XcF+O3jlsFBeQhdDHZFK+13Pxsx9g6lPhJbWPdX9locMNDePYiRhK2BUNqfeh7XeCzy6o2sqm3XGsvYZp6srkgpHyymox7N0MdTZpFN5FuhO1Waka22tA3J+BXZyaverU9mA1bOVbayy+bXta6kkOG9/bdzBfEfW1Ha38qza23pP6d/zJJX2zazSmL7LqTRgY2X3bJ2Y0mxqxb5f3fGTmdY3zRYTGdb3oJ6Laj9WN45X1SNhz016mB2wetyoD4BqNqnrtIv5xfFKBu65qy6A6ibadOSxfoesfEse4vJT6yl6nqf6HZPh+iMA0015Wo7BA97SLa83Ju8pKiSzAxcWfrjg25XlN0qMmkN204ee+hik2t0OjlaKEhtD3eor1ZhUuT45U7nap/sTzV+aYKPbJfZiDtLx7i91LR7XTq5nKsOlsr0XB+7gKuYdqSj69PZmm1sLXHRfeSaPHsqTYPWMRuU2d6h8fK9N63WmNFawqCHst159F17/fqlej807PIvBePX1TcWrA035U928N2XPHRi22jVdg2hsbA9lEz1Ky96uDCQr7USNIbvFh54+G3ntG6TWNN+axpy3XZrdrGdOdcLz6ynNt6XWm1jZZdILfme9qWte3nisUQSbusv69DWtfX669XItntrYGp0+8A7euMRTX8I8S6BLR8XSfte7MfPYYFrJJI0K2dAqO7/v1MbmjES1z9+NzelAae36HNZ6L7D5Upffo/ZtqV0xU1Tv/vxqIxePjN/+zUEPpJf3bFIZmZyvb6nmNs9jh8Ynlk0MWKpdOfU0BvrW3/Gd9RLo+vSHteNq7auwS9l+TmfbYnfLShOnDXEiKCm+cf2dbXM4oVR3z5FV746mtUs5vzlPUu1CZzP0ZsvH96aBprXR0dnjzQNO90XVm1c6Vm/O6lta5UjYe5MeZgds+2BQbVLbFtJUH4+zanFjBv7ue9Zctc6z3RuQvs6632WaAabC6voUvc9TvY/JcP256dKlSxlcQ/LL1c/edeKKTLTDjSh1QWTPXYGhhvWveJnrfNTh5Xv61MYrM1ovgllnELxMTzo1eoPtAvbry+D87vvLF1aYv/wlfTR7oe8npfTNTKcmHGOhGz3AXGu+dNdCjUBjHkrfitT8mffQtSti5t2s/v1Sl9dgg+Xo5WJ9E5IAABAASURBVOyZtzuL+riunPv5mRtuF7Bfc134xVuzDlMvpsIa3+PTFHShB5hrT7psmb5f3tViriH5ZvnMstfr/UKpQ6NcxQdX2VXpAb7hnNvzwPyHA9BBDzBwbbk5g2tN+kKOLRlcU5Yuu3Ny26LmfEIj0i/cQIoLrzNpYnP7NcANTg8wAAAAIegBBgAAIAQBGAAAgBAEYAAAAEIQgAEAAAjB9wATyZHHFi1+YPfZ7LqRGtz49t0+jT/74r3X13oBAMDVIADT7tyeBxYtHin9NALYtSQ1csfx9ltTDkytzf96ry9/bzm+dfHI1iOVX1vvb9vLmGJ266/tL2N6hUcW3f/iueoTpLejeWO+hOLfR3fUnrR4uo6HAADAlScA083I4ycvTF8sfg6MHdp0jWTgUnfobdt3jk0+O3Sf57qnL1545eGl2WVVSYMLaEEanxLstmx//c29eGHvWOtv53ffP7Joc3bgQuuvd06s6bIu07s2DXF9YfW+/FmGewgAAFwWAjCzWPt8npHOzFxz5bWrN46dfvlVmWo4516dmhnbu29d84bV+55fXf/TnkfHpzccuPD02qz01wvHJrK27LpiYnzDzMSjw1x9+NJdIxkAAFx1AjCzOXvm7dJv5QLpUlVtVims3XH86I5mbW3qVyzfs62DtMcCi97I+u1pdGta4OZDWZZ3R9ersteO5jHsrypd00u3vF7kt9u2v/L69iVd1qU8pLZWzVv76dphW7tz6W4917c1/jY1e9XE6byPdFXnYjtH6pbak1aw+xN1a3zldXtg93vZECanuvXnH//exOmx/eX0W7Pk4e90vM5fe/rA2Onxh3r0cuc91a9tuS1dOpkuJW0AALj6BGD6O7/7oV0zYztrlbd56Fp1cLReHX3i8bc3N6Nanga3vT1+rFY6e/L2ZzdNDrT0Xgs8umPN+B1760sbX5YVaeri/g1ZtqEo0C1y2rpvTowcOngkm5PjW+/bdWe9EvjYxB297nZo00P1kuCT4ysmN5fDc2t9L+5fNn5freVLHn4t3bNeQ17kwJalax8cKfdan9/91KHl499cWyzw4O3NpW2Y3DzLjFbpdZtY1qhV3vnW5l0z2UBu2/5c/qJt6pwxK13mWHHXV7o95isrl3eUAKS6AFXNAABcbwRguql1YKafR7MXpi/Wq2TzTsJs4oVGqFu6ZWIs701M3bzn9jw7OfL4gUana94Be2BskKfptcDzM+9ky2//UmNpT/cY+Lpkw8YVtQYMrZL3ljz8fDWptqxoNi+NOs7qefvoM/lFgb2tTuZ1eY9oNkBLUoNnDh6td5yePfry9IoHv1YsZOmWfa2ljY5lp9/q16nb1lu7et+Jx5dnA6pF9CxP7B1zSi9b3vV1Xrrszi63rt63f/BC6CXL78haKw4AAFeJAEw39Umwjk2MlCpdU2g8XQSn+k+zm3fm3dPLN669bdhn6bnAWtntmlknoJ7jVFhZLWwXT72jf2rtmglTPh8bXV2+ae3ohuydM7MGvNTg6alDRYOL4bg7W9m+VWu9bZbu8/S6bdg4j+ri/ApF0aedYnBpnuceI72rNfAt6/oWQlflHfgnN06tMhc0AABXlQBMH3lvYap0/V6rzHhDaYrg4uf51dm89FhgmvE4T2hnNs3yPUxznwor1VTnCf+dbV2+Cugyajb4/KGDp5spOg0Avm/qwROdMzNfRikG72+M703dvD26nd87NdOjc3jwQuh6rftrW4a+SgIAAAtHAKa/1d9tjn1NGannmNtqgWvqIy17++etjJR3F9f/1XeBWb2jcu9Y3/us/dbjWdsUTUNI9cBpaHH3eaF6Pmr5He0Fz0enDmV3LBsk3aW5u/LXKtU/N3txjx+czMb2D/UVR9XXJGXU3gYa31u80U919tCWBip3US+EPpQty/qaY40AAAAsKAGYWdSnTUp9pHnvZdaaCCp16z1WKz/OU+jyUk9g8YU6zQUUA1+bGfXIY6X5sXot8PzuHd1qZbvNxlTMLDX8VFhnX9w6jwmc0vpObmsVD6eVWjHxrXp37m1fXpZN906k6745kU1975mprJUq07cENa8RHN0xWwl0bbB063U7vjXNj91TqrUeGd1Qn8bssXLFeBrM3PhTeqOzXasq/e3Hty5eM561Rnd3W52iEHqiXwM6L4gAAMBVIQAzqzQiN5vctvVIKhs+MFb7IqL0s+rd0Xqn5dItr5/Ie2LX1IfyZs+VJ8FqzDxcPGpqNE2S3NBzge80Z+Halu1vfJtOc+BuJaTNcSqstxutXbQ5q3757QCq61ssodR/W0xPvanXtyulBmeTk1l9+qvilodfaC3t4OjsJdDV121qY/dJsOpfJVWtPT5TGXSd7S1NVV2bH+vMptbXO6UX/+JsdcvFN0UDAMB14KZLly5lsNCO7ijC1XxHCA8o76h89q4TQ5UQcyXlUXzNyxuPvd6nJxkAAC4/PcDcANLMUuPPXLGJrBjWL96azu78svQLAMBVdnMG1780pXPGtSnvn982Obb34jy+twkAABaEAAxcVqv3XZjelwEAwNVnDDAAAAAh6AEGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAAD+fH7xAAAGSUlEQVSAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGCADACACARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACCE/wkAAP//77vMBAAAAAZJREFUAwAWw8PBXE09nwAAAABJRU5ErkJggg==",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "",
+                "mime_type": "video/webm"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@bug-main",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "pokémon-detail-page",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Pokémon Detail Page",
+    "tags": [],
+    "uri": "tests\\e2e\\features\\detail.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "pokémon-pagination;navigate-to-the-next-and-previous-pages",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Navigate to the next and previous pages",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 552425900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I open the Pokédex home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\common.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 555969500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "I note the name of the first Pokémon",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\pagination.steps.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13183099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I click on the \"Next\" button",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\pagination.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1424662800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should see a different first Pokémon",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\pagination.steps.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7638600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I click on the \"Previous\" button",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\pagination.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1392827699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should see the original first Pokémon again",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\pagination.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5946799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 615103000
+            },
+            "embeddings": [
+              {
+                "data": "",
+                "mime_type": "video/webm"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@firefox",
+            "line": 2
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "pokémon-pagination",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Pokémon Pagination",
+    "tags": [],
+    "uri": "tests\\e2e\\features\\pagination.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "settings-page;change-theme-to-dark",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Change theme to Dark",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 540965699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I open the Pokédex home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\common.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 560038099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I navigate to Settings",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 419258499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I change the theme to \"Dark\"",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 321437899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the theme should be set to \"Dark\"",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5506999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 509921499
+            },
+            "embeddings": [
+              {
+                "data": "",
+                "mime_type": "video/webm"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@bug-main",
+            "line": 4
+          },
+          {
+            "name": "@firefox",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "settings-page;change-page-size-to-5",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Change page size to 5",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 591250599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "I open the Pokédex home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\common.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 549820200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I navigate to Settings",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 399023900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I change the page size to 5",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 325322899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "the page size should be set to 5",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7111199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I return to the home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 374374800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "I should see exactly 5 Pokémon cards on the home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8597200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 472097300
+            },
+            "embeddings": [
+              {
+                "data": "",
+                "mime_type": "video/webm"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@bug-main",
+            "line": 12
+          },
+          {
+            "name": "@firefox",
+            "line": 13
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "settings-page;uncheck-first-three-detail-fields",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Uncheck first three detail fields",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 545151400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "I open the Pokédex home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\common.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 484709899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I navigate to Settings",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 394169899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "I uncheck the first three detail fields",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1056162800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "the first three detail fields should not be selected",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:64"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21079599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "I return to the home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 399719300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "I click on the first Pokémon card",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:75"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5002028600,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\node_modules\\@cucumber\\cucumber\\lib\\time.js:64:20)\n    at listOnTimeout (node:internal/timers:588:17)\n    at process.processTimers (node:internal/timers:523:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 31,
+            "name": "I should see fewer details on the Pokémon detail page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:89"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 951877300
+            },
+            "embeddings": [
+              {
+                "data": "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GAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAAD+fH7xAAAGSUlEQVSAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGCADACACARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACAEARgAAIAQBGAAAABCEIABAAAIQQAGAAAgBAEYAACAEARgAAAAQhCAAQAACEEABgAAIAQBGAAAgBAEYAAAAEIQgAEAAAhBAAYAACCE/wkAAP//77vMBAAAAAZJREFUAwAWw8PBXE09nwAAAABJRU5ErkJggg==",
+                "mime_type": "image/png"
+              },
+              {
+                "data": "",
+                "mime_type": "video/webm"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@bug-main",
+            "line": 23
+          },
+          {
+            "name": "@firefox",
+            "line": 23
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "settings-page",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Settings Page",
+    "tags": [],
+    "uri": "tests\\e2e\\features\\settings.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "theme-preferences;switch-to-dark-mode",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Switch to Dark Mode",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 522178200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I open the Pokédex home page",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\common.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 550733000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I navigate to Settings",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 397419899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I change the theme to \"Dark\"",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 325894899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the theme should be set to \"Dark\"",
+            "match": {
+              "location": "file:\\C:\\Users\\navde\\Documents\\navdeep-singh\\qa-code-challenge\\tests\\e2e\\steps\\settings.steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5811699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 484527299
+            },
+            "embeddings": [
+              {
+                "data": "",
+                "mime_type": "video/webm"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@bug-main",
+            "line": 4
+          },
+          {
+            "name": "@chrome",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "theme-preferences",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Theme Preferences",
+    "tags": [],
+    "uri": "tests\\e2e\\features\\theme.feature"
+  }
+]

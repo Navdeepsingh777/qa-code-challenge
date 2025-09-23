@@ -15,7 +15,7 @@ When("I navigate to Settings", async function (this: CustomWorld) {
 When("I return to the home page", async function (this: CustomWorld) {
   await this.page.click("text=Home");
   await this.page.waitForURL("**/"); // wait for homepage load
-  await this.page.waitForSelector("a[href^='/pokemon/']", { timeout: 10000 }); // ensure cards exist
+  await this.page.waitForSelector("ul.list li.list-item a", { timeout: 10000 }); // ensure Pokémon cards exist
 });
 
 // ------------------------------
@@ -29,13 +29,13 @@ When("I change the theme to {string}", async function (this: CustomWorld, theme:
 Then("the theme should be set to {string}", async function (this: CustomWorld, theme: string) {
   const settings = new SettingsPage(this.page);
   const selected = await settings.getSelectedTheme();
-  expect(selected).toContain(theme); // normalize (e.g. "Dark" vs "Dark Mode")
 
-  // ✅ Extra validation for Dark Mode actually being applied
-  if (theme.toLowerCase().includes("dark")) {
-    const darkActive = await settings.isDarkModeActive();
-    expect(darkActive).toBeTruthy(); // Will fail on main, pass on fix-1/fix-2
+  if (selected?.toLowerCase() !== theme.toLowerCase()) {
+    // Attach Expected vs Actual into report
+    this.attach(`❌ Theme mismatch\nExpected: ${theme}\nActual: ${selected}`, "text/plain");
   }
+
+  expect(selected?.toLowerCase()).toBe(theme.toLowerCase());
 });
 
 // ------------------------------
@@ -49,12 +49,23 @@ When("I change the page size to {int}", async function (this: CustomWorld, size:
 Then("the page size should be set to {int}", async function (this: CustomWorld, size: number) {
   const settings = new SettingsPage(this.page);
   const value = await settings.getPageSize();
+
+  if (value !== size) {
+    this.attach(`❌ Page size mismatch\nExpected: ${size}\nActual: ${value}`, "text/plain");
+  }
+
   expect(value).toBe(size);
 });
 
 Then("I should see exactly {int} Pokémon cards on the home page", async function (this: CustomWorld, expectedCount: number) {
-  const cards = this.page.locator("a[href^='/pokemon/']");
-  await expect(cards).toHaveCount(expectedCount); // strict validation
+  const cards = this.page.locator("ul.list li.list-item a");
+  const actualCount = await cards.count();
+
+  if (actualCount !== expectedCount) {
+    this.attach(`❌ Card count mismatch\nExpected: ${expectedCount}\nActual: ${actualCount}`, "text/plain");
+  }
+
+  await expect(cards).toHaveCount(expectedCount, { timeout: 10000 });
 });
 
 // ------------------------------
@@ -68,6 +79,11 @@ When("I uncheck the first three detail fields", async function (this: CustomWorl
 Then("the first three detail fields should not be selected", async function (this: CustomWorld) {
   const settings = new SettingsPage(this.page);
   const states = await settings.getCheckedStates();
+
+  if (states[0] || states[1] || states[2]) {
+    this.attach(`❌ Checkbox state mismatch\nExpected: all unchecked\nActual: ${JSON.stringify(states)}`, "text/plain");
+  }
+
   expect(states[0]).toBe(false);
   expect(states[1]).toBe(false);
   expect(states[2]).toBe(false);
@@ -77,26 +93,28 @@ Then("the first three detail fields should not be selected", async function (thi
 // Click Pokémon card + Detail validation
 // ------------------------------
 When("I click on the first Pokémon card", async function (this: CustomWorld) {
-  const card = this.page.locator("a[href^='/pokemon/']").first();
+  const card = this.page.locator("ul.list li.list-item a").first();
+  await card.waitFor({ state: "visible", timeout: 10000 });
   await card.click();
 
   const detail = new DetailPage(this.page);
-  await detail.waitForDetailLoaded(); // ⛔ on main this may fail → screenshot captured
+  await detail.waitForDetailLoaded({ timeout: 10000 });
 });
 
 Then("I should see fewer details on the Pokémon detail page", async function (this: CustomWorld) {
   const detail = new DetailPage(this.page);
   const sections = await detail.getVisibleDetailSections();
-
-  // Normalize labels to lowercase for resilience
   const normalized = sections.map(s => s.toLowerCase());
+  const actual = normalized.join(" ");
 
-  // These unchecked fields must NOT appear
-  expect(normalized.join(" ")).not.toMatch(/types/);
-  expect(normalized.join(" ")).not.toMatch(/abilities/);
-  expect(normalized.join(" ")).not.toMatch(/height.*weight/);
+  // Attach actual output to report for debugging
+  this.attach(`🔎 Actual sections found:\n${actual}`, "text/plain");
 
-  // Other key sections must still appear (accept variations)
-  expect(normalized.join(" ")).toMatch(/stats|base stats/);
-  expect(normalized.join(" ")).toMatch(/description|fix me!/);
+  // Failures will show Expected vs Actual in the HTML report
+  expect(actual).not.toMatch(/types/);
+  expect(actual).not.toMatch(/abilities/);
+  expect(actual).not.toMatch(/height.*weight/);
+
+  expect(actual).toMatch(/stats|base stats/);
+  expect(actual).toMatch(/description|fix me!/);
 });
