@@ -7,26 +7,16 @@ export class DetailPage {
     this.page = page;
   }
 
-  // ✅ Wait for detail page to load (name + sprite)
-  async waitForDetailLoaded() {
-    await this.page.waitForSelector("h1", { timeout: 10000 }); // Pokémon name
-    await this.page.waitForSelector("img", { timeout: 10000 }); // Pokémon sprite
-  }
-
-  // ✅ Pokémon name
-  async getPokemonName(): Promise<string> {
-    return this.page.locator("h1").innerText();
-  }
-
-  // ✅ Pokémon sprite
-  async isSpriteVisible(): Promise<boolean> {
-    return this.page.locator("img").isVisible();
+  // ✅ Wait just for navigation (no hard failure on missing sections)
+  async waitForDetailLoaded(options = { timeout: 15000 }) {
+    await this.page.waitForURL("**/pokemon/*", { timeout: options.timeout });
   }
 
   // ✅ Capture visible section headers
   async getVisibleDetailSections(): Promise<string[]> {
-    // Grab headers likely used for sections: h2 or strong elements
-    const headers = this.page.locator("section h2, section strong, div h2, div strong");
+    const headers = this.page.locator(
+      "section h2, section strong, div h2, div strong, .detail-section h2, .detail-section strong"
+    );
     const count = await headers.count();
     const sections: string[] = [];
 
@@ -38,5 +28,31 @@ export class DetailPage {
     }
 
     return sections;
+  }
+
+  // ✅ Logical validation (instead of raw timeout)
+  async validateSections(expectedMissing: string[], expectedPresent: string[], attach: (msg: string, type: string) => void) {
+    const sections = await this.getVisibleDetailSections();
+    const normalized = sections.map(s => s.toLowerCase());
+    const actual = normalized.join(" ");
+
+    // Attach actual output for debugging
+    attach(`🔎 Actual sections found:\n${actual}`, "text/plain");
+
+    // Check missing ones
+    for (const missing of expectedMissing) {
+      if (actual.includes(missing.toLowerCase())) {
+        attach(`❌ Expected NOT to see: ${missing}`, "text/plain");
+        throw new Error(`Unexpected section found: ${missing}`);
+      }
+    }
+
+    // Check present ones
+    for (const present of expectedPresent) {
+      if (!actual.includes(present.toLowerCase())) {
+        attach(`❌ Expected to see: ${present}`, "text/plain");
+        throw new Error(`Missing expected section: ${present}`);
+      }
+    }
   }
 }

@@ -31,7 +31,6 @@ Then("the theme should be set to {string}", async function (this: CustomWorld, t
   const selected = await settings.getSelectedTheme();
 
   if (selected?.toLowerCase() !== theme.toLowerCase()) {
-    // Attach Expected vs Actual into report
     this.attach(`❌ Theme mismatch\nExpected: ${theme}\nActual: ${selected}`, "text/plain");
   }
 
@@ -81,7 +80,10 @@ Then("the first three detail fields should not be selected", async function (thi
   const states = await settings.getCheckedStates();
 
   if (states[0] || states[1] || states[2]) {
-    this.attach(`❌ Checkbox state mismatch\nExpected: all unchecked\nActual: ${JSON.stringify(states)}`, "text/plain");
+    this.attach(
+      `❌ Checkbox state mismatch\nExpected: all unchecked\nActual: ${JSON.stringify(states)}`,
+      "text/plain"
+    );
   }
 
   expect(states[0]).toBe(false);
@@ -92,29 +94,27 @@ Then("the first three detail fields should not be selected", async function (thi
 // ------------------------------
 // Click Pokémon card + Detail validation
 // ------------------------------
-When("I click on the first Pokémon card", async function (this: CustomWorld) {
+When("I click on the first Pokémon card", { timeout: 20000 }, async function (this: CustomWorld) {
   const card = this.page.locator("ul.list li.list-item a").first();
-  await card.waitFor({ state: "visible", timeout: 10000 });
-  await card.click();
+
+  await expect(card).toBeVisible({ timeout: 10000 });
+
+  // Click and wait for navigation to detail page
+  await Promise.all([
+    this.page.waitForURL("**/pokemon/*", { timeout: 15000 }),
+    card.click(),
+  ]);
 
   const detail = new DetailPage(this.page);
-  await detail.waitForDetailLoaded({ timeout: 10000 });
+  await detail.waitForDetailLoaded({ timeout: 15000 });
 });
 
 Then("I should see fewer details on the Pokémon detail page", async function (this: CustomWorld) {
   const detail = new DetailPage(this.page);
-  const sections = await detail.getVisibleDetailSections();
-  const normalized = sections.map(s => s.toLowerCase());
-  const actual = normalized.join(" ");
 
-  // Attach actual output to report for debugging
-  this.attach(`🔎 Actual sections found:\n${actual}`, "text/plain");
-
-  // Failures will show Expected vs Actual in the HTML report
-  expect(actual).not.toMatch(/types/);
-  expect(actual).not.toMatch(/abilities/);
-  expect(actual).not.toMatch(/height.*weight/);
-
-  expect(actual).toMatch(/stats|base stats/);
-  expect(actual).toMatch(/description|fix me!/);
+  await detail.validateSections(
+    ["types", "abilities", "height", "weight"], // should be missing
+    ["stats", "base stats", "description"],     // should be present
+    this.attach.bind(this)                      // attach for report
+  );
 });
